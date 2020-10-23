@@ -7,22 +7,28 @@
   overflow-x: auto;
   border-radius: 15px;
 }
-/* .orders-table__head-row-cell {
-  font-size: 16px;
+.orders-table__head-row-cell {
   font-weight: 600;
   padding: 14px 5px;
-  border: 1px solid #333;
-} */
+}
 th {
   background: #496791;
   color: #fff;
 }
 td {
-  background: #f5e8d0;
+  background: #d0dcf5;
   text-align: center;
 }
 td,
 th {
   padding: 5px 10px;
   vertical-align: top;
+}
+.orders-table__body-row-cell {
+  background: #f5e8d0;
+  padding: 14px 5px;
+}
+.orders-table__body-row-cell-dishes:not(:last-child)::after {
+  display: inline;
+  content: ", ";
 }

@@ -14,7 +14,8 @@
         <tbody class="orders-table__body">
            <tr class="orders-table__body-row" v-for="(order,key) in orders" :key="key">
              <td class="orders-table__body-row-cell">{{order.orderId}}</td>
-             <td class="orders-table__body-row-cell">{{order.dishes}}</td>
+             <td class="orders-table__body-row-cell" >
+               <span class="orders-table__body-row-cell-dishes" v-for="(item, key2) in order.dishes" :key="key2">{{item.name}}</span></td>
              <td class="orders-table__body-row-cell">{{order.orderPrice}}</td>
              <td class="orders-table__body-row-cell">{{order.clientId}}</td>
            </tr>

@@ -1,6 +1,5 @@
 <template>
   <div class="homepage">
-    <h1>Доставка</h1>
     <OrdersList
     :orders =  "orders"
     />

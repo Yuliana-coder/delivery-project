@@ -1,19 +1,6 @@
 <template>
-  <div id="app">
-    <Homepage />
-  </div>
+  <router-view />
 </template>
-
-<script>
-import Homepage from './page/homepage/homepage.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Homepage
-  }
-}
-</script>
 
 <style>
 #app {

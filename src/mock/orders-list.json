@@ -1,0 +1,26 @@
+[
+    {
+        "orderId": 1,
+        "dishes":[
+            {
+                "id": 1,
+                "name": "Салат",
+                "price": 100
+            }
+        ],
+        "orderPrice": 100,
+        "clientId": 1
+    },
+        {
+        "orderId": 2,
+        "dishes":[
+            {
+                "id": 2,
+                "name": "Суп",
+                "price": 80
+            }
+        ],
+        "orderPrice": 80,
+        "clientId": 2
+    }
+]

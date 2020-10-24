@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import store from "./store";
 
 Vue.use(VueRouter);
 import MainLayout from "@/layout-pages/main-layout.vue";
@@ -19,6 +20,11 @@ const router = new VueRouter({
     {
       path: "/",
       component: MainLayout,
+      beforeEnter(to, from, next) {
+        store.dispatch("getData").finally(() => {
+          next();
+        });
+      },
       children: [
         {
           path: "",

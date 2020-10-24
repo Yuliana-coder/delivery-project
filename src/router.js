@@ -8,6 +8,10 @@ const Homepage = () =>
   import(
     /* webpackChunkName: "homepage-view" */ "@/page/homepage/homepage.vue"
   );
+const Notifications = () =>
+  import(
+    /* webpackChunkName: "notifications" */ "@/page/notifications/notifications.vue"
+  );
 
 const router = new VueRouter({
   mode: "history",
@@ -20,6 +24,11 @@ const router = new VueRouter({
           path: "",
           name: "index",
           component: Homepage,
+        },
+        {
+          path: "/notifications",
+          name: "notifications",
+          component: Notifications,
         },
       ],
     },

@@ -1,6 +1,6 @@
 .orders-table {
   width: 100%;
-  /* border-collapse: collapse; */
+  border-collapse: unset;
   min-width: 1000px;
 }
 .orders-table__wrapper {
@@ -24,8 +24,12 @@ th {
   padding: 5px 10px;
   vertical-align: top;
 }
+.orders-table__body-row:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px #496791;
+}
 .orders-table__body-row-cell {
-  background: #f5e8d0;
+  background-color: #fff;
   padding: 14px 5px;
 }
 .orders-table__body-row-cell-dishes:not(:last-child)::after {

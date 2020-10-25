@@ -10,12 +10,13 @@ export default {
     console.log(this.orders);
   },
   computed: {
-    notificationOrders () {
-        let allOrders = [...this.orders];
-        allOrders = allOrders.filter((item) => {
-            return !item.processed
-        })
-      return allOrders;
+    getNotifications() {
+        return this.$store.getters.notificationOrders;
     }
-  }
+  },
+  methods: {
+    goToOrdering(id) {
+      this.$router.push({ path: "notifications/" + id });
+    },
+  },
 };

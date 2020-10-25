@@ -30,4 +30,11 @@ button:active, button:focus {
 button::-moz-focus-inner {
   border: 0;
 }
+.bread-crumbs {
+  margin-left: -70px;
+}
+.bread-crumbs:hover {
+  cursor: pointer;
+  color: red;
+}
 </style>

@@ -1,9 +1,11 @@
 <template>
   <div class="notifications">
     <h2>Уведомления</h2>
-    <template v-if="notificationOrders && notificationOrders.length">
-      <ul>
-        <li v-for="(item, key) in notificationOrders" :key="key"><a>Заказ #{{item.orderId}}</a></li>
+    <template v-if="getNotifications && getNotifications.length">
+      <ul class="notifications-list">
+        <li class="notifications-list__item" v-for="(item, key) in getNotifications" :key="key" >
+          <span  @click="goToOrdering(item.orderId)">Заказ #{{item.orderId}}</span>
+          </li>
       </ul>
     </template>
     <template v-else><span>Нет необработанных заказов</span></template>

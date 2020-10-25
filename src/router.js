@@ -13,7 +13,10 @@ const Notifications = () =>
   import(
     /* webpackChunkName: "notifications" */ "@/page/notifications/notifications.vue"
   );
-
+const Ordering = () =>
+  import(
+    /* webpackChunkName: "notifications" */ "@/page/ordering/ordering.vue"
+  );
 const router = new VueRouter({
   mode: "history",
   routes: [
@@ -35,6 +38,11 @@ const router = new VueRouter({
           path: "/notifications",
           name: "notifications",
           component: Notifications,
+        },
+        {
+          path: "/notifications/:id",
+          name: "orderning",
+          component: Ordering
         },
       ],
     },

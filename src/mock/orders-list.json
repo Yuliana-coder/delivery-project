@@ -2,6 +2,7 @@
     {
         "orderId": 1,
         "processed": false,
+        "rejected": false,
         "dishes":[
             {
                 "id": 1,
@@ -20,6 +21,7 @@
         {
         "orderId": 2,
         "processed": false,
+        "rejected": false,
         "dishes":[
             {
                 "id": 2,
@@ -38,6 +40,7 @@
     {
         "orderId": 3,
         "processed": true,
+        "rejected": false,
         "dishes":[
             {
                 "id": 3,

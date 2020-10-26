@@ -21,10 +21,16 @@
 .btn-ok {
   background-color: rgb(122, 181, 221);
 }
-.btn:hover {
+button:hover {
   cursor: pointer;
 }
 button:active, button:focus {
+  outline: none;
+}
+input:active, input:focus {
+  outline: none;
+}
+select:active, select:focus {
   outline: none;
 }
 button::-moz-focus-inner {

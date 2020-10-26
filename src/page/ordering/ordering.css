@@ -1,3 +1,69 @@
 .ordering {
   padding: 30px 100px;
 }
+.ordering__customer-data {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+.ordering__customer-card-title {
+  margin-bottom: 10px;
+}
+.ordering__customer-data-item {
+  margin: 5px 0;
+}
+.ordering__customer-data-field {
+  color: lightslategray;
+}
+.ordering__customer-data-phone-link {
+  font-size: 16px;
+  text-decoration: none;
+  color: rgb(64, 101, 224);
+}
+.ordering__confirmation-btn-wrapper {
+  display: flex;
+}
+.ordering__confirmation-btn {
+  margin: 0 10px;
+}
+.ordering__reject {
+  padding: 20px;
+}
+.ordering__reject-title {
+    margin-bottom: 10px;
+}
+.ordering__reject-selector {
+  font-size: 14px;
+}
+.ordering__reject-other-reason {
+    padding: 10px 0;
+    display: flex;
+}
+.ordering__reject-other-reason-input {
+    margin: 5px 0;
+    width: 208px;
+    color: grey;
+    font-size: 14px;
+}
+.ordering__reject-other-reason-ok {
+    margin-left: 20px;
+    border: none;
+    padding: 5px;
+    font-size: 14px;
+    background-color: lightsalmon;
+    border-radius: 5px;
+}
+.ordering__confirm-message {
+    padding-top: 25px;
+}
+.ordering__confirm-card {
+    display: flex;
+    align-items: center;
+}
+.ordering__confirm-btn {
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: rgb(144, 238, 183);
+    border-radius: 5px;
+}

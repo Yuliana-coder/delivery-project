@@ -29,11 +29,19 @@ const store = new Vuex.Store({
       });
       store.commit("setCurrentCustomer", current);
     },
+    getOrder(state, payload) {
+      let orders = [...store.state.orders];
+      let current = orders.find((item) => {
+        return item.clientId == parseInt(payload);
+      });
+      store.commit("setCurrentOrder", current);
+    },
   },
   state: {
     orders: null,
     customers: null,
     currentCustomer: null,
+    currentOrder: null,
   },
   mutations: {
     setOrdersData(state, data) {
@@ -43,7 +51,10 @@ const store = new Vuex.Store({
       state.customers = data;
     },
     setCurrentCustomer(state, data) {
-        state.currentCustomer = data;
+      state.currentCustomer = data;
+    },
+    setCurrentOrder(state, data) {
+      state.currentOrder = data;
     },
   },
 });

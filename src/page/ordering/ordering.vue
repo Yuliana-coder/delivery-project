@@ -17,9 +17,6 @@
             <div v-if="customer.address" class="ordering__customer-data-item">
                 <span><span class="ordering__customer-data-field">Адрес:</span> {{customer.address}}</span>
             </div>
-            <div v-if="customer.ordertime" class="ordering__customer-data-item">
-                <span><span class="ordering__customer-data-field">Дата и время заказа:</span> {{customer.ordertime}}</span>
-            </div>
         </div>
         <div class="ordering__confirmation-btn-wrapper">
             <button class="btn btn-ok ordering__confirmation-btn" :disabled="isReject" @click="isGoConfirm=true; isGoReject=false">
@@ -48,14 +45,14 @@
                 </div>
             </div>
             <div v-if="isReject">
-                Зявка на заказ#{{customer.id}} отклонена.
+                Заявка на заказ#{{customer.id}} отклонена.
             </div>
         </template>
         <template v-else-if="isGoConfirm">
             <div class="ordering__confirm-message">Заявка на заказ #{{customer.id}} подтверждена.</div>
             <div class="ordering__confirm-card"><span>Для завершения оформления заказа, передайте заказ на кухню.</span>
-            <button class="btn ordering__confirm-btn">Отправить на кухню</button></div>
-            
+            <button @click="sendOrder" class="btn ordering__confirm-btn">Отправить на кухню</button></div>
+            <div v-if="isTreatment">Обработка...</div>
         </template>
     </div>
     <div v-else>Данные о заказчике отсутствуют. Отклоните заявку.</div>

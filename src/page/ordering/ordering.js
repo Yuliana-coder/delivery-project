@@ -8,6 +8,7 @@ export default {
       isOtherReason: false,
       isReject: false,
       currentSelect: "Нет данных о заказчике",
+      isTreatment: false,
     };
   },
   beforeMount() {
@@ -35,6 +36,12 @@ export default {
       } else {
         this.isOtherReason = false;
       }
+    },
+    sendOrder() {
+      this.isTreatment = true;
+      setTimeout(() => {
+        this.$router.push({ path: "delivery/" + this.customer.id });
+      }, 5000);
     },
   },
 };

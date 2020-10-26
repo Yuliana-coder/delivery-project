@@ -16,7 +16,9 @@
             }
         ],
         "orderPrice": 100,
-        "clientId": 1
+        "clientId": 1,
+        "ordertime": "09.09 - 18:00",
+        "weight": "3 кг"
     },
         {
         "orderId": 2,
@@ -35,7 +37,9 @@
             }
         ],
         "orderPrice": 80,
-        "clientId": 2
+        "clientId": 2,
+        "ordertime": "09.09 - 18:50",
+        "weight": "2 кг"
     },
     {
         "orderId": 3,
@@ -49,6 +53,8 @@
             }
         ],
         "orderPrice": 180,
-        "clientId": 3
+        "clientId": 3,
+        "ordertime": "09.09 - 19:17",
+        "weight": "11 кг"
     }
 ]

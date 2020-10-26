@@ -17,6 +17,10 @@ const Ordering = () =>
   import(
     /* webpackChunkName: "notifications" */ "@/page/ordering/ordering.vue"
   );
+const DeliveryRegistration = () =>
+  import(
+    /* webpackChunkName: "notifications" */ "@/page/delivery-registration/delivery-registration.vue"
+  );
 const router = new VueRouter({
   mode: "history",
   routes: [
@@ -42,7 +46,12 @@ const router = new VueRouter({
         {
           path: "/notifications/:id",
           name: "orderning",
-          component: Ordering
+          component: Ordering,
+        },
+        {
+          path: "/notifications/delivery/:id",
+          name: "delivery",
+          component: DeliveryRegistration,
         },
       ],
     },

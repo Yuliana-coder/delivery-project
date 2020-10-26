@@ -1,0 +1,71 @@
+.delivery-registration {
+  position: relative;
+  padding: 30px 100px;
+}
+.delivery__choice-services-detail {
+  margin-top: 4px;
+  font-size: 13px;
+}
+.delivery__choice-services-detail-bold {
+  font-weight: bold;
+}
+.delivery__info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+.delivery__info-card {
+  display: flex;
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin: 10px;
+}
+.delivery__info-card-item {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-right: 20px;
+}
+.delivery__dishes-item:not(:last-child)::after {
+  display: inline;
+  content: ", ";
+}
+.delivery__services-selector-wrapper {
+  margin: 10px 5px;
+}
+.delivery__services-selector {
+  width: 180px;
+  height: 35px;
+  font-size: 16px;
+}
+.delivery__btn-ok {
+  margin-left: 20px;
+  border: none;
+  padding: 5px;
+  font-size: 14px;
+  background-color: lightsalmon;
+  border-radius: 5px;
+}
+.delivery__info_font {
+  font-size: 14px;
+}
+.delivery__btn-checkout {
+    margin-left: 500px;
+}
+.delivery_window {
+    margin: 0;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -30%);
+}
+.delivery__information {
+    height: 500px;
+    width: 700px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #535151;
+    border-radius: 20px;
+    padding: 20px;
+}

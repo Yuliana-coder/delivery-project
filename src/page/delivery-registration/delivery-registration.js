@@ -19,5 +19,8 @@ export default {
         });
       }
     },
+    goToHomepage() {
+      this.$router.push({ path: '/' })
+    }
   },
 };

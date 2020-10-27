@@ -51,21 +51,54 @@
   font-size: 14px;
 }
 .delivery__btn-checkout {
-    margin-left: 500px;
+  margin-left: 500px;
 }
 .delivery_window {
-    margin: 0;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -30%);
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -30%);
 }
 .delivery__information {
-    height: 500px;
-    width: 700px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px #535151;
-    border-radius: 20px;
-    padding: 20px;
+  height: 500px;
+  width: 700px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #535151;
+  border-radius: 20px;
+  padding: 20px;
+}
+.delivery-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.delivery-table__head-row {
+  background-color: rgb(156, 176, 196);
+}
+.delivery-table__head-row-cell, .delivery-table__body-row-cell {
+  border: 1px solid;
+}
+.delivery-table__title {
+  margin-bottom: 10px;
+}
+.delivery__info-card-wrapper {
+  width: 100%;
+  padding: 10px 5px;
+}
+.delivery-table__wrapper {
+  max-height: 400px;
+  overflow-x: auto;
+}
+.delivery__total-amount {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.delivery__btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.delivery__btn {
+  margin: 0 10px;
 }

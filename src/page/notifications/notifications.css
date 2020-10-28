@@ -1,6 +1,9 @@
 .notifications {
   padding: 30px 100px;
 }
+.notifications-list__item {
+  margin: 10px 0;
+}
 .notifications-list__item:hover {
   cursor: pointer;
 }

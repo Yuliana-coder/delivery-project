@@ -9,6 +9,7 @@
             <td class="orders-table__head-row-cell">Список блюд</td>
             <td class="orders-table__head-row-cell">Сумма заказа</td>
             <td class="orders-table__head-row-cell">id Клиента</td>
+            <td class="orders-table__head-row-cell">Статус</td>
           </tr>
         </thead>
         <tbody class="orders-table__body">
@@ -18,6 +19,9 @@
                <span class="orders-table__body-row-cell-dishes" v-for="(item, key2) in order.dishes" :key="key2">{{item.name}}</span></td>
              <td class="orders-table__body-row-cell">{{order.orderPrice}}</td>
              <td class="orders-table__body-row-cell">{{order.clientId}}</td>
+             <td v-if="order.rejected" class="orders-table__body-row-cell orders-table__body-row-cell_cancel">Отклонен</td>
+             <td v-else-if="order.processed" class="orders-table__body-row-cell orders-table__body-row-cell_ok">Подтвержден</td>
+             <td v-else-if="!order.processed" class="orders-table__body-row-cell orders-table__body-row-cell_wait">Требует обработки</td>
            </tr>
         </tbody>
       </table>

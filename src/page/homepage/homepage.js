@@ -1,10 +1,10 @@
 import orderssListMock from "@/mock/orders-list.json";
-import OrdersList from "@/components/orders-list.vue"
+import OrdersList from "@/components/orders-list/orders-list.vue";
 
 export default {
-    components: {
-        OrdersList
-    },
+  components: {
+    OrdersList,
+  },
   name: "Homepage",
   data() {
     return {

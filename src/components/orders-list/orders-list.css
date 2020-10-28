@@ -36,3 +36,13 @@ th {
   display: inline;
   content: ", ";
 }
+.orders-table__body-row-cell_cancel {
+  background-color: lightsalmon;
+}
+.orders-table__body-row-cell_ok {
+  background-color: rgb(154, 240, 154);
+}
+.orders-table__body-row-cell_wait {
+  background-color: lightgoldenrodyellow;
+  border: red 3px solid;
+}

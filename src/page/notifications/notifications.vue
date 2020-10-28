@@ -4,7 +4,7 @@
     <template v-if="getNotifications && getNotifications.length">
       <ul class="notifications-list">
         <li class="notifications-list__item" v-for="(item, key) in getNotifications" :key="key" >
-          <span  @click="goToOrdering(item.orderId)">Заказ #{{item.orderId}}</span>
+          <span  @click="goToOrdering(item.orderId)">Заказ #{{item.orderId}} {{item.ordertime}}</span>
           </li>
       </ul>
     </template>

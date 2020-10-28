@@ -2,7 +2,8 @@
     {
         "orderId": 1,
         "processed": false,
-        "rejected": false,
+        "rejected": true,
+        "reasonForRejection": "",
         "dishes":[
             {
                 "id": 1,
@@ -26,6 +27,7 @@
         "orderId": 2,
         "processed": false,
         "rejected": false,
+        "reasonForRejection": "",
         "dishes":[
             {
                 "id": 2,
@@ -49,6 +51,7 @@
         "orderId": 3,
         "processed": true,
         "rejected": false,
+        "reasonForRejection": "",
         "dishes":[
             {
                 "id": 3,

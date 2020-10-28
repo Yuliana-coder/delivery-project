@@ -1,0 +1,19 @@
+.popup {
+  width: 400px;
+  height: 200px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #535151;
+  border-radius: 20px;
+}
+.popup__btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.popup__info {
+    padding-left: 20px;
+    overflow-x: auto;
+}
+.popup__info-card-item {
+    margin: 5px 0;
+}

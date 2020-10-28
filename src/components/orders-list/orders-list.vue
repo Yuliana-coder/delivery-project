@@ -13,7 +13,7 @@
           </tr>
         </thead>
         <tbody class="orders-table__body">
-           <tr class="orders-table__body-row" v-for="(order,key) in orders" :key="key">
+           <tr class="orders-table__body-row" v-for="(order,key) in orders" :key="key" @click="serShowOrder(order)">
              <td class="orders-table__body-row-cell">#{{order.orderId}}</td>
              <td class="orders-table__body-row-cell" >
                <span class="orders-table__body-row-cell-dishes" v-for="(item, key2) in order.dishes" :key="key2">{{item.name}}</span></td>
@@ -25,6 +25,12 @@
            </tr>
         </tbody>
       </table>
+    </div>
+    <div v-if="isShowPopup" class="orders-popup">
+        <Popup
+        :order="getShowOrder"
+        @closePopup = "setIsShow($event)"
+        />
     </div>
   </div>
 </template>

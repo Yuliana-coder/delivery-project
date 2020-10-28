@@ -1,3 +1,6 @@
+.orders {
+  position: relative;
+}
 .orders-table {
   width: 100%;
   border-collapse: unset;
@@ -45,4 +48,12 @@ th {
 .orders-table__body-row-cell_wait {
   background-color: lightgoldenrodyellow;
   border: red 3px solid;
+}
+.orders-popup {
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -30%);
 }

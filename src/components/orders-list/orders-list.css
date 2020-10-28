@@ -47,7 +47,7 @@ th {
 }
 .orders-table__body-row-cell_wait {
   background-color: lightgoldenrodyellow;
-  border: red 3px solid;
+  /* border: red 3px solid; */
 }
 .orders-popup {
   margin: 0;

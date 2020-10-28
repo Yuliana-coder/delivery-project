@@ -1,6 +1,6 @@
 .popup {
   width: 400px;
-  height: 200px;
+  height: 300px;
   padding: 20px;
   background-color: #ffffff;
   box-shadow: 0 0 10px #535151;
@@ -11,9 +11,13 @@
   justify-content: flex-end;
 }
 .popup__info {
-    padding-left: 20px;
-    overflow-x: auto;
+  padding-left: 20px;
+  overflow-x: auto;
 }
 .popup__info-card-item {
-    margin: 5px 0;
+  margin: 5px 0;
+}
+.popup__dishes-item:not(:last-child)::after {
+  display: inline;
+  content: ", ";
 }

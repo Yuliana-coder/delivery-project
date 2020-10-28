@@ -10,7 +10,7 @@
       <div v-if="isNotificationsOpen" class="notifications-card">
         <div class="notifications-card__content">
           <template v-if="notificationsCount">
-            <div class="notifications-card__title">Имеется 2 необработанных заказа</div>
+            <div class="notifications-card__title">Имеется {{notificationsCount}} необработанных заказа</div>
             <div class="notifications-card__btn-wrapper">
               <button @click="openNotifications" class="btn btn-ok notifications-card__btn">
                 Перейти к оформлению
@@ -21,7 +21,12 @@
             </div>
           </template>
           <template v-else>
-            Нет необработанных заказов.
+            <div class="notifications_not-porrocessed-orders">
+              Нет необработанных заказов.
+              <button @click="isNotificationsOpen = false" class="btn btn-cancel notifications-card__btn">
+                  Закрыть
+              </button>
+            </div>
           </template>
         </div>
         </div>
@@ -34,7 +39,8 @@
 export default {
     name: 'MainLayout',
     data() {
-      return { notificationsCount: 2,
+      return {
+        //  notificationsCount: 2,
       isNotificationsOpen: false}
     },
     methods: {
@@ -45,6 +51,14 @@ export default {
       goToHomepage() {
         this.$router.push({ path: '/' })
       }
+    },
+    computed: {
+        notificationsCount() {
+          let orders = [...JSON.parse(localStorage.getItem("orders"))];
+          return orders.filter((item) => {
+            return !item.processed && !item.rejected
+          }).length;
+        }
     }
     
 }
@@ -85,6 +99,7 @@ export default {
 .notifications-card__content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 400px;
   height: 150px;
   max-width: 100%;
@@ -100,6 +115,10 @@ export default {
 }
 .notifications-card__btn {
   margin: 10px;
+}
+.notifications_not-porrocessed-orders {
+  display: flex;
+  flex-direction: column;
 }
 
 </style>

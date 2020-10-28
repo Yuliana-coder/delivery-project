@@ -9,10 +9,12 @@ export default {
       isReject: false,
       currentSelect: "Нет данных о заказчике",
       isTreatment: false,
+      orderId: null,
     };
   },
   beforeMount() {
     this.getCustomer();
+    this.orderId = this.$route.params.id;
     console.log(this.customer);
   },
   methods: {
@@ -28,6 +30,17 @@ export default {
       }
     },
     cancelNotification() {
+      let orders = [...JSON.parse(localStorage.getItem("orders"))];
+      for (let i = 0; i < orders.length; i++) {
+        if (orders[i].orderId === parseInt(this.orderId)) {
+          orders[i].rejected = true;
+          orders[i].processed = true;
+          orders[i].reasonForRejection = this.currentSelect;
+          console.log(orders[i]);
+          break;
+        }
+      }
+      localStorage.setItem("orders", JSON.stringify(orders));
       this.isGoReject = true;
     },
     checkSelect(event) {
@@ -38,6 +51,15 @@ export default {
       }
     },
     sendOrder() {
+      let orders = [...JSON.parse(localStorage.getItem("orders"))];
+      for (let i = 0; i < orders.length; i++) {
+        if (orders[i].orderId === parseInt(this.orderId)) {
+          orders[i].processed = true;
+          console.log(orders[i]);
+          break;
+        }
+      }
+      localStorage.setItem("orders", JSON.stringify(orders));
       this.isTreatment = true;
       setTimeout(() => {
         this.$router.push({ path: "delivery/" + this.customer.id });

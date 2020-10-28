@@ -6,13 +6,17 @@ export default {
     };
   },
   beforeMount() {
-    this.orders = this.$store.state.orders;
+    // this.orders = this.$store.state.orders;
+    this.orders = [...JSON.parse(localStorage.getItem("orders"))];
     console.log(this.orders);
   },
   computed: {
     getNotifications() {
-        return this.$store.getters.notificationOrders;
-    }
+      let orders = [...JSON.parse(localStorage.getItem("orders"))];
+      return orders.filter((item) => {
+        return !item.processed && !item.rejected;
+      });
+    },
   },
   methods: {
     goToOrdering(id) {

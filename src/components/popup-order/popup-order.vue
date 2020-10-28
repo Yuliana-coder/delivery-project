@@ -14,9 +14,12 @@
             <div v-if="order.weight" class="popup__info-card-item"><span>Вес заказа:&nbsp;</span>
             <span>{{order.weight}}</span></div>
             <div v-if="order.weight" class="popup__info-card-item"><span>Статус:&nbsp;
-                 <template v-if="order.rejected">Отклонен</template>
+                 <template v-if="order.rejected">Отклонен
+                      <div>Причина: <template v-if="order.reasonForRejection">{{order.reasonForRejection}}</template>
+                      <template v-else>Некорректные данные</template></div>
+                 </template>
              <template v-else-if="order.processed">Подтвержден</template>
-             <template v-else-if="!order.processed">Требует обработки</template>
+             <template v-else-if="!order.processed">Требует обработки </template>
               </span></div>
     </div>
   </div>

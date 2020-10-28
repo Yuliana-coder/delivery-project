@@ -19,8 +19,13 @@ const store = new Vuex.Store({
   },
   actions: {
     getData() {
-      store.commit("setOrdersData", ordersMock);
+      // store.commit("setOrdersData", ordersMock);
       store.commit("setCustomersData", customersMock);
+      if (!localStorage.getItem("orders")) {
+        console.log(ordersMock);
+        localStorage.setItem("orders", JSON.stringify(ordersMock));
+      }
+      store.commit("setOrdersData", JSON.parse(localStorage.getItem("orders")));
     },
     getCustomer(state, payload) {
       let customers = [...store.state.customers];
@@ -30,7 +35,8 @@ const store = new Vuex.Store({
       store.commit("setCurrentCustomer", current);
     },
     getOrder(state, payload) {
-      let orders = [...store.state.orders];
+      // let orders = [...store.state.orders];
+      let orders = JSON.parse(localStorage.getItem("orders"));
       let current = orders.find((item) => {
         return item.clientId == parseInt(payload);
       });

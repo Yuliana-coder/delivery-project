@@ -64,5 +64,197 @@
         "clientId": 3,
         "ordertime": "09.09 - 19:17",
         "weight": "11 кг"
+    },
+    {
+        "orderId": 4,
+        "processed": false,
+        "rejected": true,
+        "reasonForRejection": "",
+        "dishes":[
+            {
+                "id": 4,
+                "name": "Пирог",
+                "price": 100,
+                "weight": "300 гр"
+            },
+            {
+                "id": 4,
+                "name": "Компот",
+                "price": 100,
+                "weight": "300 гр"
+            }
+        ],
+        "orderPrice": 100,
+        "clientId": 4,
+        "ordertime": "09.09 - 18:00",
+        "weight": "3 кг"
+    },
+        {
+        "orderId": 5,
+        "processed": false,
+        "rejected": false,
+        "reasonForRejection": "",
+        "dishes":[
+            {
+                "id": 5,
+                "name": "Кисель",
+                "price": 80,
+                "weight": "300 гр"
+            },
+            {
+                "id": 5,
+                "name": "Ватрушка",
+                "price": 80,
+                "weight": "300 гр"
+            }
+        ],
+        "orderPrice": 80,
+        "clientId": 5,
+        "ordertime": "09.09 - 18:50",
+        "weight": "2 кг"
+    },
+    {
+        "orderId": 7,
+        "processed": true,
+        "rejected": false,
+        "reasonForRejection": "",
+        "dishes":[
+            {
+                "id": 7,
+                "name": "Картошка",
+                "price": 80,
+                "weight": "300 гр"
+            }
+        ],
+        "orderPrice": 180,
+        "clientId": 7,
+        "ordertime": "09.09 - 19:17",
+        "weight": "1.2 кг"
+    },
+    {
+        "orderId": 8,
+        "processed": true,
+        "rejected": false,
+        "reasonForRejection": "",
+        "dishes":[
+            {
+                "id": 8,
+                "name": "Селедка под шубой",
+                "price": 80,
+                "weight": "300 гр"
+            },
+            {
+                "id": 8,
+                "name": "Оливье",
+                "price": 80,
+                "weight": "300 гр"
+            }
+        ],
+        "orderPrice": 180,
+        "clientId": 8,
+        "ordertime": "09.09 - 19:17",
+        "weight": "1 кг"
+    },
+    {
+        "orderId": 9,
+        "processed": true,
+        "rejected": false,
+        "reasonForRejection": "",
+        "dishes":[
+            {
+                "id": 9,
+                "name": "Пряники",
+                "price": 80,
+                "weight": "300 гр"
+            }
+        ],
+        "orderPrice": 180,
+        "clientId": 9,
+        "ordertime": "09.09 - 19:17",
+        "weight": "0.3 кг"
+    },
+    {
+        "orderId": 10,
+        "processed": true,
+        "rejected": false,
+        "reasonForRejection": "",
+        "dishes":[
+            {
+                "id": 10,
+                "name": "Салат",
+                "price": 80,
+                "weight": "300 гр"
+            }
+        ],
+        "orderPrice": 180,
+        "clientId": 10,
+        "ordertime": "09.09 - 19:17",
+        "weight": "11 кг"
+    },
+    {
+        "orderId": 11,
+        "processed": true,
+        "rejected": false,
+        "reasonForRejection": "",
+        "dishes":[
+            {
+                "id": 11,
+                "name": "Пирожное",
+                "price": 80,
+                "weight": "300 гр"
+            },
+            {
+                "id": 11,
+                "name": "Пельмени",
+                "price": 80,
+                "weight": "300 гр"
+            },
+            {
+                "id": 11,
+                "name": "Сок",
+                "price": 80,
+                "weight": "300 гр"
+            }
+        ],
+        "orderPrice": 180,
+        "clientId": 11,
+        "ordertime": "09.09 - 19:17",
+        "weight": "11 кг"
+    },
+    {
+        "orderId": 12,
+        "processed": true,
+        "rejected": false,
+        "reasonForRejection": "",
+        "dishes":[
+            {
+                "id": 12,
+                "name": "Гороховый суп",
+                "price": 80,
+                "weight": "300 гр"
+            }
+        ],
+        "orderPrice": 180,
+        "clientId": 12,
+        "ordertime": "09.09 - 19:17",
+        "weight": "11 кг"
+    },
+    {
+        "orderId": 13,
+        "processed": true,
+        "rejected": false,
+        "reasonForRejection": "",
+        "dishes":[
+            {
+                "id": 13,
+                "name": "Весенний салат",
+                "price": 80,
+                "weight": "300 гр"
+            }
+        ],
+        "orderPrice": 180,
+        "clientId": 13,
+        "ordertime": "09.09 - 19:17",
+        "weight": "11 кг"
     }
 ]

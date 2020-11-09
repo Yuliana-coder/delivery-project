@@ -6,9 +6,7 @@ export default {
     };
   },
   beforeMount() {
-    // this.orders = this.$store.state.orders;
     this.orders = [...JSON.parse(localStorage.getItem("orders"))];
-    console.log(this.orders);
   },
   computed: {
     getNotifications() {

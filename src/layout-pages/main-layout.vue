@@ -2,8 +2,8 @@
   <div id="app">
     <!-- <Header /> -->
     <div class="header">
-      <span @click="goToHomepage" class="header__title">Доставка</span>
-      <span class="header__notifications" @click="isNotificationsOpen=true">Уведомления <template>({{notificationsCount}})</template></span>
+      <span @click="goToHomepage" class="header__title">Доставка </span>
+      <span class="header__notifications" @click="openNotificationsPopup">Уведомления <template v-if="notificationsCount">({{$store.state.notificationsCount}})</template></span>
     </div>
     <main class="main">
       <router-view></router-view>
@@ -15,7 +15,7 @@
               <button @click="openNotifications" class="btn btn-ok notifications-card__btn">
                 Перейти к оформлению
               </button>
-              <button @click="isNotificationsOpen = false" class="btn btn-cancel notifications-card__btn">
+              <button @click="closePopup" class="btn btn-cancel notifications-card__btn">
                 Закрыть
               </button>
             </div>
@@ -23,25 +23,30 @@
           <template v-else>
             <div class="notifications_not-porrocessed-orders">
               Нет необработанных заказов.
-              <button @click="isNotificationsOpen = false" class="btn btn-cancel notifications-card__btn">
+              <button @click="closePopup" class="btn btn-cancel notifications-card__btn">
                   Закрыть
               </button>
             </div>
           </template>
         </div>
-        </div>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
+import vClickOutside from 'v-click-outside'
+
 
 export default {
     name: 'MainLayout',
+    directives: {
+      clickOutside: vClickOutside.directive
+    },
     data() {
       return {
-        //  notificationsCount: 2,
-      isNotificationsOpen: false}
+      // isNotificationsOpen: false,
+      val: 0}
     },
     methods: {
       openNotifications() {
@@ -50,14 +55,24 @@ export default {
       },
       goToHomepage() {
         this.$router.push({ path: '/' })
+      },
+      countVal() {
+        this.val = this.val + 1;
+      },
+      openNotificationsPopup() {
+        this.$store.commit("setOrderOpen", false);
+        this.$store.commit("setNotificationOpen", true);
+      },
+      closePopup() {
+        this.$store.commit("setNotificationOpen", false);
       }
-    },
+    }, 
     computed: {
-        notificationsCount() {
-          let orders = [...JSON.parse(localStorage.getItem("orders"))];
-          return orders.filter((item) => {
-            return !item.processed && !item.rejected
-          }).length;
+        notificationsCount: function() {
+          return this.$store.state.notificationsCount;
+        },
+        isNotificationsOpen: function() {
+          return this.$store.state.isNotificationOpen;
         }
     }
     
@@ -75,7 +90,6 @@ export default {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #b3b3b3;
-  /* position: relative; */
 }
 .header__title {
   font-size: 19px;

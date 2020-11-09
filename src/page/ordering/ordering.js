@@ -15,7 +15,6 @@ export default {
   beforeMount() {
     this.getCustomer();
     this.orderId = this.$route.params.id;
-    console.log(this.customer);
   },
   methods: {
     goToBack() {
@@ -25,7 +24,6 @@ export default {
       if (this.$route.params.id) {
         this.$store.dispatch("getCustomer", this.$route.params.id).then(() => {
           this.customer = this.$store.state.currentCustomer;
-          console.log(this.customer);
         });
       }
     },
@@ -36,12 +34,15 @@ export default {
           orders[i].rejected = true;
           orders[i].processed = true;
           orders[i].reasonForRejection = this.currentSelect;
-          console.log(orders[i]);
           break;
         }
       }
       localStorage.setItem("orders", JSON.stringify(orders));
       this.isGoReject = true;
+      let newCount = orders.filter((item) => {
+        return !item.processed && !item.rejected;
+      }).length;
+      this.$store.commit("setNotificationsCount", newCount);
     },
     checkSelect(event) {
       if (event.target.value === "Другая причина:") {
@@ -55,7 +56,7 @@ export default {
       for (let i = 0; i < orders.length; i++) {
         if (orders[i].orderId === parseInt(this.orderId)) {
           orders[i].processed = true;
-          console.log(orders[i]);
+
           break;
         }
       }
@@ -64,6 +65,10 @@ export default {
       setTimeout(() => {
         this.$router.push({ path: "delivery/" + this.customer.id });
       }, 5000);
+      let newCount = orders.filter((item) => {
+        return !item.processed && !item.rejected;
+      }).length;
+      this.$store.commit("setNotificationsCount", newCount);
     },
   },
 };

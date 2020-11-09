@@ -8,7 +8,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   modules: {},
   getters: {
-    /**необработанный заказы */
+    /**необработанные заказы */
     notificationOrders() {
       let allOrders = [...store.state.orders];
       allOrders = allOrders.filter((item) => {
@@ -19,13 +19,19 @@ const store = new Vuex.Store({
   },
   actions: {
     getData() {
-      // store.commit("setOrdersData", ordersMock);
       store.commit("setCustomersData", customersMock);
       if (!localStorage.getItem("orders")) {
-        console.log(ordersMock);
         localStorage.setItem("orders", JSON.stringify(ordersMock));
       }
       store.commit("setOrdersData", JSON.parse(localStorage.getItem("orders")));
+      let orders = [...JSON.parse(localStorage.getItem("orders"))];
+      Vue.set(
+        store.state,
+        "notificationsCount",
+        orders.filter((item) => {
+          return !item.processed && !item.rejected;
+        }).length
+      );
     },
     getCustomer(state, payload) {
       let customers = [...store.state.customers];
@@ -35,7 +41,6 @@ const store = new Vuex.Store({
       store.commit("setCurrentCustomer", current);
     },
     getOrder(state, payload) {
-      // let orders = [...store.state.orders];
       let orders = JSON.parse(localStorage.getItem("orders"));
       let current = orders.find((item) => {
         return item.clientId == parseInt(payload);
@@ -48,6 +53,8 @@ const store = new Vuex.Store({
     customers: null,
     currentCustomer: null,
     currentOrder: null,
+    isOrderOpen: false,
+    isNotificationOpen: false,
   },
   mutations: {
     setOrdersData(state, data) {
@@ -61,6 +68,15 @@ const store = new Vuex.Store({
     },
     setCurrentOrder(state, data) {
       state.currentOrder = data;
+    },
+    setNotificationsCount(state, data) {
+      Vue.set(state, "notificationsCount", data);
+    },
+    setNotificationOpen(state, data) {
+      Vue.set(state, "isNotificationOpen", data);
+    },
+    setOrderOpen(state, data) {
+      Vue.set(state, "isOrderOpen", data);
     },
   },
 });
